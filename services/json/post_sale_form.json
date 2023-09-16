@@ -1,0 +1,9 @@
+{
+    "name": "John",
+    "surname": "Doe",
+    "phone_number": "123456789",
+    "service_choices": 1,
+    "email": "johndoe@example.com",
+    "message": "This is a test message"
+  }
+  

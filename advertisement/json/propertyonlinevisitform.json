@@ -1,0 +1,10 @@
+{
+    "name": "John",
+    "surname": "Doe",
+    "phone_number": "+1234567890",
+    "email": "john.doe@example.com",
+    "message": "This is a test message",
+    "property_slug2": "property-slug-123",
+    "property_locale": "en",
+    "property_custom_id": "12345"
+  }

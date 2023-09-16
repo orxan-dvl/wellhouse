@@ -1,0 +1,9 @@
+{
+    "name": "John",
+    "surname": "Doe",
+    "phone_number": "123456789",
+    "email": "johndoe@example.com",
+    "skype": "johndoe_skype",
+    "visit_date": "2023-07-15",
+    "message": "This is a test message"
+  }

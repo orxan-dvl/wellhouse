@@ -1,0 +1,11 @@
+{
+    "name": "John",
+    "surname": "Doe",
+    "phone_number": "123456789",
+    "email": "johndoe@example.com",
+    "arrival_date": "2023-07-15",
+    "return_date": "2023-07-20",
+    "people_count": 2,
+    "message": "This is a test message"
+  }
+  

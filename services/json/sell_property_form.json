@@ -1,0 +1,11 @@
+{
+    "name": "John",
+    "surname": "Doe",
+    "phone_number": "123456789",
+    "email": "johndoe@example.com",
+    "type" : "test",
+    "city" : "test",
+    "required_cost": "1500",
+    "address": "test",
+    "message": "This is a test message"
+  }
