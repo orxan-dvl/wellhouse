@@ -19,6 +19,6 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           password: ${{ secrets.SSH_PASSWORD }}
 
-          script: 'cd /var/www/django/wellhouse && source venv/bin/activate && ./deploy.sh'
+#          script: 'cd /var/www/django/wellhouse && source venv/bin/activate && ./deploy.sh'
 
-
+          script: 'cd /root/back_end/wagtail/wellhouse && source venv/bin/activate && ./deploy.sh'
