@@ -7,7 +7,6 @@ DEBUG = True
 SECRET_KEY = "django-insecure-0a*4rs!%5k=ix*$_o*e&nb8+n7_y99cf$+md^2za-tg+=y!uq@"
 
 #ALLOWED_HOSTS = ["*"]
-ALLOWED_HOSTS = [".vercel.app"]
 
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
@@ -38,7 +37,7 @@ DATABASES = {
 
 
 #Uncomment the following line to use DEBUG=True in production
-#CSRF_TRUSTED_ORIGINS = ['https://apitraktordetal.demodev.click']
+#CSRF_TRUSTED_ORIGINS = ['https://apiwellhouse.demodev.click']
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -56,3 +55,37 @@ try:
     from .local import *
 except ImportError:
     pass
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CORS_ORIGIN = [
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "POST",
+            "GET",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ]
+    }
+]

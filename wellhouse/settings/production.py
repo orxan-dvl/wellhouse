@@ -81,7 +81,7 @@ CSRF_TRUSTED_ORIGINS = ['https://apiwellhouse.demodev.click', 'https://well-hous
 CSRF_COOKIE_NAME = 'csrftoken'
 
 CORS_ALLOWED_ORIGINS = [
-    "https://well-houses.com",
+    "https://apiwellhouse.demodev.click",
 ]
 
 CORS_ALLOW_METHODS = [
