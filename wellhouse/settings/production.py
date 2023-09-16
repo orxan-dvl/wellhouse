@@ -4,9 +4,8 @@ DEBUG = False
 
 SECRET_KEY = "django-insecure-0a*4rs!%5k=ix*$_o*e&nb8+n7_y99cf$+md^2za-tg+=y!uq@"
 
-# ALLOWED_HOSTS = ["traktordetal.demodev.click", "www.traktordetal.demodev.click"]
+# ALLOWED_HOSTS = ["apiwellhouse.demodev.click", "www.apiwellhouse.demodev.click"]
 ALLOWED_HOSTS = ["*"]
-#ALLOWED_HOSTS = [".vercel.app"]
 
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
@@ -33,23 +32,23 @@ WAGTAILFRONTENDCACHE = {
 
 #after completing project you must uncomment this CACHES variable
 
-#CACHES = {
-#    'default': {
-#        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-#        'LOCATION': os.path.join(BASE_DIR, 'cache'),
-#        'KEY_PREFIX': 'wagtailcache',
-#        'TIMEOUT': 31536000, # one hour (in seconds)
-#    },
-#
-#}
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache'),
+        'KEY_PREFIX': 'wagtailcache',
+        'TIMEOUT': 31536000, # one hour (in seconds)
+    },
+
+}
 
 
 #for disabling cache
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-    }
-}
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+#    }
+#}
 
 
 DATABASES = {
