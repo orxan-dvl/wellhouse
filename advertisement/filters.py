@@ -203,14 +203,14 @@ class PropertyDetailPageListView(PagesAPIViewSet):
          'short_description_to_the_sea', 'short_description_to_the_sea__gte', 'short_description_to_the_sea__lte',
          'short_description_to_the_center', 'short_description_to_the_center__gte', 'short_description_to_the_lte',
          'short_description_to_the_airport', 'short_description_to_the_airport__gte',
-         'short_description_to_the_airport__lte', 'categories']
+         'short_description_to_the_airport__lte', ]
     )
 
 
     listing_default_fields = PagesAPIViewSet.listing_default_fields + [
         "title",'slug2', 'slug', 'property_type', 'property_category', 'property_city', 'property_region', 
         'short_description_rooms', 'custom_id', 'area', 'area_2', 'general_cost', 'general_cost_second', 
-        'discounted_cost', 'discounted_cost_second', 'first_image', 'longitude', 'latitude', 'categories']
+        'discounted_cost', 'discounted_cost_second', 'first_image', 'longitude', 'latitude',]
     
 
     def get_queryset(self):

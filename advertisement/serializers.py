@@ -199,6 +199,7 @@ class CategoryForPropertyDetailPageSerializer(Field):
 # Homepage.home_all_advertisement_list, Homepage.home_ctg_1_properties, Homepage.home_ctg_2_properties,
 # Homepage.home_ctg_3_properties, Homepage.home_ctg_4_properties,Homepage.home_ctg_5_properties, 
 # Homepage.home_ctg_6_properties)
+
 class SimilarPropertyDetailSerializer(Field):
     def to_representation(self, value):
         data_list = []
@@ -209,12 +210,12 @@ class SimilarPropertyDetailSerializer(Field):
                 'locale': i.locale.language_code,
                 'title': i.title,
                 'image': CustomImageSerializer().to_representation(i.first_image) if i.first_image else None,
-                'city': i.property_region.city_rel.name,
-                'region': i.property_region.name,
-                'categories': CategoryListSerializer().to_representation(i.property_category.all()),
+                'property_city': i.property_region.city_rel.name,
+                'property_region': i.property_region.name,
+                'property_categories': CategoryListSerializer().to_representation(i.property_category.all()),
                 'area': i.area,
                 'area_2': i.area_2,
-                'rooms_count': HomeRoomSerialzer().to_representation(i.short_description_rooms.all()),
+                'short_description_rooms': HomeRoomSerialzer().to_representation(i.short_description_rooms.all()),
                 'custom_id': CustomIdSerializer().to_representation(i.slug2),
                 'general_cost': i.general_cost,
                 'general_cost_second': i.general_cost_second,
@@ -225,6 +226,33 @@ class SimilarPropertyDetailSerializer(Field):
             }
             data_list.append(data)
         return data_list
+
+#class SimilarPropertyDetailSerializer(Field):
+#    def to_representation(self, value):
+#        data_list = []
+#        for i in value:
+#            data = {
+#                'slug2': i.slug2,
+#                'id': i.id,
+#                'locale': i.locale.language_code,
+#                'title': i.title,
+#                'image': CustomImageSerializer().to_representation(i.first_image) if i.first_image else None,
+#                'city': i.property_region.city_rel.name,
+#                'region': i.property_region.name,
+#                'categories': CategoryListSerializer().to_representation(i.property_category.all()),
+#                'area': i.area,
+#                'area_2': i.area_2,
+#                'rooms_count': HomeRoomSerialzer().to_representation(i.short_description_rooms.all()),
+#                'custom_id': CustomIdSerializer().to_representation(i.slug2),
+#                'general_cost': i.general_cost,
+#                'general_cost_second': i.general_cost_second,
+#                'discounted_cost': i.discounted_cost,
+#                'discounted_cost_second': i.discounted_cost_second,
+#                'longitude': i.longitude,
+#                'latitude': i.latitude,
+#            }
+#            data_list.append(data)
+#        return data_list
 
 
 #This serializer is used in the APIField s of the 
