@@ -128,11 +128,11 @@ class PropertyRequestTypesSerializer(ModelSerializer):
 
 #
 class PropertyDetailFormSerializer(ModelSerializer):
-    request_choices = PrimaryKeyRelatedField(queryset=PropertyRequestTypes.objects.all())
+#    request_choices = PrimaryKeyRelatedField(queryset=PropertyRequestTypes.objects.all())
 
     class Meta:
         model = PropertyDetailForm
-        fields = ('id', 'name', 'surname', 'phone_number', 'request_choices',
+        fields = ('id', 'name', 'surname', 'phone_number', #'request_choices',
                   'email', 'message', 'created_at', 'property_locale', 'property_slug2', 'property_custom_id')
 
         extra_kwargs = {

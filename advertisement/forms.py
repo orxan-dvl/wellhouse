@@ -44,8 +44,8 @@ class PropertyDetailForm(models.Model):
     surname = models.CharField(max_length=255, null=True, blank=False)
     phone_number = models.CharField(max_length=17, null=True, blank=False)
     email = models.EmailField(null=True, blank=False)
-    request_choices = models.ForeignKey('advertisement.PropertyRequestTypes', on_delete=models.SET_NULL,
-                                        null=True, blank=False)
+    #request_choices = models.ForeignKey('advertisement.PropertyRequestTypes', on_delete=models.SET_NULL,
+    #                                    null=True, blank=False)
     
     message = models.TextField()
     property_slug2 = models.CharField(max_length=255, null=True, blank=False)
