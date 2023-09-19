@@ -58,8 +58,8 @@ DATABASES = {
         'USER':  "wellhouse_user",
         'PASSWORD': "6RpIuYMcxArKD47EP9fjANze25eP5e2gJdWrhrriq7",
 #        'HOST':  "localhost",
-#        'HOST':  "167.235.240.205",
-        'HOST':  "95.216.217.57",
+        'HOST':  "167.235.240.205",
+#        'HOST':  "95.216.217.57",
         'PORT':  "5432",
 
     }
