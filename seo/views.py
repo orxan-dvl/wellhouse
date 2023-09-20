@@ -12,6 +12,7 @@ from wellhouse.settings.base import BASE_DIR
 @api_view(('GET',))
 def sitemap(request):
     site = Site.find_for_request(request)
+
     root_page = Page.objects.defer_streamfields().get(id=site.root_page_id)
 
     urlset = []
