@@ -32,23 +32,23 @@ WAGTAILFRONTENDCACHE = {
 
 #after completing project you must uncomment this CACHES variable
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': os.path.join(BASE_DIR, 'cache'),
-        'KEY_PREFIX': 'wagtailcache',
-        'TIMEOUT': 31536000, # one hour (in seconds)
-    },
-
-}
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+#        'LOCATION': os.path.join(BASE_DIR, 'cache'),
+#        'KEY_PREFIX': 'wagtailcache',
+#        'TIMEOUT': 31536000, # one hour (in seconds)
+#    },
+#
+#}
 
 
 #for disabling cache
-#CACHES = {
-#    'default': {
-#        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-#    }
-#}
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
 
 
 DATABASES = {
