@@ -185,25 +185,6 @@ class PropertyDetailOnlineVisitFormSerializer(ModelSerializer):
     
 
 
-#
-#class PropertyDetailPageSerializer(PageSerializer):
-#    property_category = CategorySerializer(many=True)
-#    property_tags = TagSerializer(many=True)
-#    short_description_rooms = RoomSerializer(many=True)
-#
-#    class Meta:
-#        model = PropertyDetailPage
-#        fields = '__all__'
-#
-#    def to_representation(self, instance):
-#        representation = super().to_representation(instance)
-#        representation['property_category'] = CategorySerializer(instance.property_category.all(), many=True).data
-#        representation['property_tags'] = TagSerializer(instance.property_tags.all(), many=True).data
-#        representation['short_description_rooms'] = RoomSerializer(instance.short_description_rooms.all(), 
-#                                                                   many=True).data
-#
-#        return representation
-
 
 class PropertyDetailPageSerializer(PageSerializer):
     property_category = CategorySerializer(many=True)
@@ -216,24 +197,43 @@ class PropertyDetailPageSerializer(PageSerializer):
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
-        
-        # Check and serialize property_category
-        if instance.property_category.exists():
-            representation['property_category'] = CategorySerializer(instance.property_category.all(), many=True).data
-        else:
-            representation['property_category'] = []
-
-        # Check and serialize property_tags
-        if instance.property_tags.exists():
-            representation['property_tags'] = TagSerializer(instance.property_tags.all(), many=True).data
-        else:
-            representation['property_tags'] = []
-
-        # Check and serialize short_description_rooms
-        if instance.short_description_rooms.exists():
-            representation['short_description_rooms'] = RoomSerializer(instance.short_description_rooms.all(), 
-                                                                       many=True).data
-        else:
-            representation['short_description_rooms'] = []
+        representation['property_category'] = CategorySerializer(instance.property_category.all(), many=True).data
+        representation['property_tags'] = TagSerializer(instance.property_tags.all(), many=True).data
+        representation['short_description_rooms'] = RoomSerializer(instance.short_description_rooms.all(), 
+                                                                   many=True).data
 
         return representation
+
+
+#class PropertyDetailPageSerializer(PageSerializer):
+#    property_category = CategorySerializer(many=True)
+#    property_tags = TagSerializer(many=True)
+#    short_description_rooms = RoomSerializer(many=True)
+#
+#    class Meta:
+#        model = PropertyDetailPage
+#        fields = '__all__'
+#
+#    def to_representation(self, instance):
+#        representation = super().to_representation(instance)
+#        
+#        # Check and serialize property_category
+#        if instance.property_category.exists():
+#            representation['property_category'] = CategorySerializer(instance.property_category.all(), many=True).data
+#        else:
+#            representation['property_category'] = []
+#
+#        # Check and serialize property_tags
+#        if instance.property_tags.exists():
+#            representation['property_tags'] = TagSerializer(instance.property_tags.all(), many=True).data
+#        else:
+#            representation['property_tags'] = []
+#
+#        # Check and serialize short_description_rooms
+#        if instance.short_description_rooms.exists():
+#            representation['short_description_rooms'] = RoomSerializer(instance.short_description_rooms.all(), 
+#                                                                       many=True).data
+#        else:
+#            representation['short_description_rooms'] = []
+#
+#        return representation
