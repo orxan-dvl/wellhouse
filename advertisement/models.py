@@ -1014,20 +1014,21 @@ class PropertyDetailPage(WagtailCacheMixin, MetadataPageMixin, SEOPage):
 
     def get_property_type(self):
         base_page = PropertyDetailPage.objects.filter(locale__language_code=wcl[0][0], slug2=self.slug2).first()
-        foreingkey_field = base_page.property_type
+        if base_page:
+            foreingkey_field = base_page.property_type
 
-        if self.locale.language_code==wcl[0][0]:
-            data = foreingkey_field if base_page.property_type else None 
-        else:
-            if foreingkey_field.get_translation_or_none(self.locale.id):
-                data = foreingkey_field.get_translation_or_none(self.locale.id)
+            if self.locale.language_code==wcl[0][0]:
+                data = foreingkey_field if base_page.property_type else None 
             else:
-                data = {
-                    'locale': self.locale.language_code,
-                    'slug2': foreingkey_field.slug2,
-                    'message': """There is not translation for object that slug2=={}, locale=={}"""\
-                                        .format(foreingkey_field.slug2, self.locale.id),
-                }
+                if foreingkey_field.get_translation_or_none(self.locale.id):
+                    data = foreingkey_field.get_translation_or_none(self.locale.id)
+                else:
+                    data = {
+                        'locale': self.locale.language_code,
+                        'slug2': foreingkey_field.slug2,
+                        'message': """There is not translation for object that slug2=={}, locale=={}"""\
+                                            .format(foreingkey_field.slug2, self.locale.id),
+                    }
         return data
 
     
