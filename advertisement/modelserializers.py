@@ -190,7 +190,7 @@ class PropertyDetailPageSerializer(PageSerializer):
     property_category = CategorySerializer(many=True)
     property_tags = TagSerializer(many=True)
     short_description_rooms = RoomSerializer(many=True)
-    property_type = TypeSerializer() 
+#    property_type = TypeSerializer() 
 
     class Meta:
         model = PropertyDetailPage

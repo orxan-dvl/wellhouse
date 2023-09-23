@@ -845,7 +845,8 @@ class PropertyDetailPage(WagtailCacheMixin, MetadataPageMixin, SEOPage):
         APIField('child_pages', ChildPageSerializer(source='get_child_pages')),   
         APIField("property_categories", CategoryListSerializer(source='get_property_categories')),
         APIField("property_type", PropertyDetailForeingkey2FieldSerializer(source='get_property_type')),
-
+#        APIField("property_type"),
+ 
         APIField("property_city", 
                  PropertyDetailForeingkey2FieldSerializer(source='get_property_city')),
 
