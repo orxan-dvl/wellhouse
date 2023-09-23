@@ -39,6 +39,6 @@ class AskCallForm(models.Model):
     has_been_read = models.BooleanField(default=False)
 
     def __str__(self):
-        return "{}".format(self.message)
+        return "{}".format(self.name)
     
     
