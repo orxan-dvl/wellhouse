@@ -4,7 +4,7 @@ from wagtail_localize.modeladmin.options import TranslatableModelAdmin
 from advertisement.models import Category, Type, Region, City, OffererPerson, Tags, Room
 from advertisement.forms import PropertyDetailForm, PropertyRequestTypes, PropertyDetailOnlineVisitForm
 
-#from advertisement.utils import MyTranslatableCreateView
+from advertisement.utils import MyTranslatableCreateView
 
 
 class RoomAdmin(TranslatableModelAdmin):
@@ -16,7 +16,7 @@ class RoomAdmin(TranslatableModelAdmin):
     list_filter = ("name",)
     search_fields = ("name",)
     inspect_view_enabled = True
-#    create_view_class = MyTranslatableCreateView
+    create_view_class = MyTranslatableCreateView
 
 
 
@@ -31,7 +31,7 @@ class CategoryAdmin(TranslatableModelAdmin):
     list_filter = ("name",)
     search_fields = ("name",)
     inspect_view_enabled = True
-#    create_view_class = MyTranslatableCreateView
+    create_view_class = MyTranslatableCreateView
 
 
 modeladmin_register(CategoryAdmin)
@@ -46,7 +46,7 @@ class TypeAdmin(TranslatableModelAdmin):
     list_filter = ("name",)
     search_fields = ("name",)
     inspect_view_enabled = True
-#    create_view_class = MyTranslatableCreateView
+    create_view_class = MyTranslatableCreateView
 
 
 modeladmin_register(TypeAdmin)
@@ -61,7 +61,7 @@ class CityAdmin(TranslatableModelAdmin):
     list_filter = ("name",)
     search_fields = ("name",)
     inspect_view_enabled = True
-#    create_view_class = MyTranslatableCreateView
+    create_view_class = MyTranslatableCreateView
 
 modeladmin_register(CityAdmin)
 
@@ -75,7 +75,7 @@ class RegionAdmin(TranslatableModelAdmin):
     list_filter = ("name",)
     search_fields = ("name",)
     inspect_view_enabled = True
-#    create_view_class = MyTranslatableCreateView
+    create_view_class = MyTranslatableCreateView
 
 modeladmin_register(RegionAdmin)
 
@@ -90,7 +90,7 @@ class OffererPersonAdmin(TranslatableModelAdmin):
     list_filter = ("name",)
     search_fields = ("name",)
     inspect_view_enabled = True
-#    create_view_class = MyTranslatableCreateView
+    create_view_class = MyTranslatableCreateView
 
 modeladmin_register(OffererPersonAdmin)
 
@@ -103,7 +103,7 @@ class TagsAdmin(TranslatableModelAdmin):
     list_filter = ("name",)
     search_fields = ("name",)
     inspect_view_enabled = True
-#    create_view_class = MyTranslatableCreateView
+    create_view_class = MyTranslatableCreateView
 
 modeladmin_register(TagsAdmin)
 
@@ -116,7 +116,7 @@ class PropertyRequestTypesAdmin(TranslatableModelAdmin):
     list_filter = ("name",)
     search_fields = ("name",)
     inspect_view_enabled = True
-#    create_view_class = MyTranslatableCreateView
+    create_view_class = MyTranslatableCreateView
 
 modeladmin_register(PropertyRequestTypesAdmin)
 
@@ -130,7 +130,7 @@ class PropertyDetailFormAdmin(ModelAdmin):
     list_filter = ("property_custom_id", "name",)
     search_fields = ("name", "property_custom_id")
     inspect_view_enabled = True
-#    create_view_class = MyTranslatableCreateView
+    create_view_class = MyTranslatableCreateView
 
 modeladmin_register(PropertyDetailFormAdmin)
 
@@ -143,7 +143,7 @@ class PropertyDetailOnlineVisitFormAdmin(ModelAdmin):
     list_display = ("property_custom_id",)
     list_filter = ("property_custom_id", "name",)
     search_fields = ("name", "property_custom_id")
-#    inspect_view_enabled = True
+    inspect_view_enabled = True
 
 modeladmin_register(PropertyDetailOnlineVisitFormAdmin)
 
